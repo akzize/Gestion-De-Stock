@@ -21,6 +21,7 @@ if (!isset($_SESSION['user'])) {
     <main>
         <a class="btn btn-outline-danger" href="./config/logout.php" name="logout">Se deconnecter</a>
         <p>test jira</p>
+        zorp dfgfghjjgu swfewfdwe
     </main>
     <!-- js -->
     <script src="assets/js/app.js"></script>
