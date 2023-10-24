@@ -38,9 +38,6 @@ if (isset($_POST['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Authentifier</title>
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- MDB icon -->
     <link rel="icon" href="img/Logo.png" type="image/x-icon" />
     <!-- Font Awesome -->
@@ -49,33 +46,15 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
     <!-- MDB -->
-    <link rel="stylesheet" href="css/bootstrap-login-form.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-login-form.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
     <script src="./js/scripts.js"></script>
 
 </head>
 
 <body>
     <!-- Start your project here-->
-
-    <style>
-    .divider:after,
-    .divider:before {
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: #eee;
-    }
-
-    .h-custom {
-        height: calc(100% - 73px);
-    }
-
-    @media (max-width: 450px) {
-        .h-custom {
-            height: 100%;
-        }
-    }
-    </style>
     <section class="vh-100">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
