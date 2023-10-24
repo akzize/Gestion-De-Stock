@@ -31,19 +31,26 @@ if (isset($action) && $action == "Ajouter") {
     } else {
         // Récupère les info  de produit en utilisant la variable superglobale POST
 
-        $nomProduit = $_GET['nomProduit'];
-        $idProduit = $_GET['idProduit'];
-        $descProduit = $_GET['descProduit'];
-        $prixProduit = $_GET['prixProduit'];
-        $imageProduit = $_GET['imageProduit'];
+
 
         // Prépare la requête SQL avec un paramètre à lier
         $stmt = $conn->prepare("INSERT INTO Products (`ProductID`,`Name`,`Description`,Price,CategoryID,`image`) VALUES(?,?,?,?,?,?)");
+
+
+        $uploads_dir = '/images';
+        $tmp_name = $_FILES["imageProduit"]["tmp_name"];
+        $nameImage = $_FILES["imageProduit"]["name"];
+        move_uploaded_file($tmp_name, "$uploads_dir/$nameImage");
+
         $stmt->bindParam(1, $idProduit);
         $stmt->bindParam(2, $nomProduit);
         $stmt->bindParam(3, $descProduit);
         $stmt->bindParam(4, $prixProduit);
         $stmt->bindParam(5, $idCategorie);
+        $stmt->bindParam(6, $nameImage);
+
+        // le code pour placer l'image dans le dossier imags
+
 
         if ($stmt->execute()) {
             echo "le produit est insérée avec succès.";
@@ -75,47 +82,47 @@ if (isset($action) && $action == "Ajouter") {
 // $stmt->bindParam(2,$nomCategorie);
 
 // Récupère les info  de produit en utilisant la variable superglobale POST
-$nomProduit = $_GET['nomProduit'];
-$idProduit = $_GET['idProduit'];
-$descProduit = $_GET['descProduit'];
-$prixProduit = $_GET['prixProduit'];
-$imageProduit = $_GET['imageProduit'];
+// $nomProduit = $_GET['nomProduit'];
+// $idProduit = $_GET['idProduit'];
+// $descProduit = $_GET['descProduit'];
+// $prixProduit = $_GET['prixProduit'];
+// $imageProduit = $_GET['imageProduit'];
 // $nomProduit=$_FILES['imageProduit']['name'];
 // $nomProduit=$_FILES['imageProduit']['tempnaame'];
 
-$stmt1 = $conn->prepare("INSERT INTO Products (`ProductID`,`Name`,`Description`,Price,CategoryID,`image`) VALUES(?,?,?,?,?,?)");
+// $stmt1 = $conn->prepare("INSERT INTO Products (`ProductID`,`Name`,`Description`,Price,CategoryID,`image`) VALUES(?,?,?,?,?,?)");
 
 
 
 // le code pour placer l'image dans le dossier imags
 
-$uploads_dir = '/images';
+// $uploads_dir = '/images';
 
-$tmp_name = $_FILES["imageProduit"]["tmp_name"];
-$nameImage = $_FILES["imageProduit"]["name"];
-move_uploaded_file($tmp_name, "$uploads_dir/$nameImage");
+// $tmp_name = $_FILES["imageProduit"]["tmp_name"];
+// $nameImage = $_FILES["imageProduit"]["name"];
+// move_uploaded_file($tmp_name, "$uploads_dir/$nameImage");
 
 
 
 // Lie la valeur de $nomCategorie au paramètre de la requête
 
-$stmt1->bindParam(1, $idProduit);
-$stmt1->bindParam(2, $nomProduit);
-$stmt1->bindParam(3, $descProduit);
-$stmt1->bindParam(4, $prixProduit);
-$stmt1->bindParam(5, $idCategorie);
-$stmt1->bindParam(6, $nameImage);
+// $stmt1->bindParam(1, $idProduit);
+// $stmt1->bindParam(2, $nomProduit);
+// $stmt1->bindParam(3, $descProduit);
+// $stmt1->bindParam(4, $prixProduit);
+// $stmt1->bindParam(5, $idCategorie);
+// $stmt1->bindParam(6, $nameImage);
 
 
 
 
 
 
-if ($stmt1->execute()) {
-    echo "le produit est insérée avec succès.";
-} else {
-    echo "Erreur lors de l'insertion de la catégorie : " . $stmt1->errorInfo()[2];
-}
+// if ($stmt1->execute()) {
+//     echo "le produit est insérée avec succès.";
+// } else {
+//     echo "Erreur lors de l'insertion de la catégorie : " . $stmt1->errorInfo()[2];
+// }
 
 
 
