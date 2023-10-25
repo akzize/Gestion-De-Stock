@@ -24,9 +24,9 @@ if (isset($action) && $action == "Ajouter") {
 
 
         if ($stmt->execute()) {
-            echo "la categorie est insérée avec succès.";
+            echo json_encode("la categorie est insérée avec succès.");
         } else {
-            echo "Erreur lors de l'insertion de la catégorie : " . $stmt->errorInfo()[2];
+            echo json_encode("Erreur lors de l'insertion de la catégorie : " . $stmt->errorInfo()[2]);
         }
     } else {
         // Récupère les info  de produit en utilisant la variable superglobale POST
@@ -53,9 +53,9 @@ if (isset($action) && $action == "Ajouter") {
 
 
         if ($stmt->execute()) {
-            echo "le produit est insérée avec succès.";
+            echo json_encode("le produit est insérée avec succès.");
         } else {
-            echo "Erreur lors de l'insertion du produit : " . $stmt->errorInfo()[2];
+            echo json_encode("Erreur lors de l'insertion du produit : " . $stmt->errorInfo()[2]);
         }
     }
 }
