@@ -33,6 +33,8 @@ if (count($result)){
 
     echo json_encode($result);
 }
-echo json_encode("aucun produit trouver")
+else{
+    echo json_encode("aucun produit trouver");
+}
 
 ?>
