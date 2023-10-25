@@ -7,13 +7,32 @@ include_once __DIR__ . "/../config/connect.php";
 // $action = $_POST["action"];
 
 // Récupère les info  de de produit en utilisant la variable superglobale POST
-$nomProduit = $_POST["nomProduit"];
-$stmt = $conn->prepare("SELECT * FROM Products WHERE Name LIKE :nomProduit");
-$nomProduit = '%' . $nomProduit . '%';  // Ajoutez des % autour de la valeur de recherche
-$stmt->bindParam(':nomProduit', $nomProduit);
-$stmt->execute();
 
+
+if (isset($_POST["nomProduit"])){
+    $nomProduit = $_POST["nomProduit"];
+    $stmt = $conn->prepare("SELECT * FROM Products WHERE Name LIKE :nomProduit");
+    $nomProduit = '%' . $nomProduit . '%';  // Ajoutez des % autour de la valeur de recherche
+    $stmt->bindParam(':nomProduit', $nomProduit);
+    
+}
+elseif(isset($_POST['idCategorie'])){
+    $nomCategorie=$_POST['idCategorie'];
+    $stmt = $conn->prepare("SELECT * FROM Products WHERE CategoryID=:nomCategorie");
+    // $nomCategorie = '%' . $nomCategorie . '%';  // Ajoutez des % autour de la valeur de recherche
+    $stmt->bindParam(':nomCategorie', $nomCategorie);
+
+
+
+}
+
+
+$stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo json_encode($result);
+if (count($result)){
+
+    echo json_encode($result);
+}
+echo json_encode("aucun produit trouver")
 
 ?>
