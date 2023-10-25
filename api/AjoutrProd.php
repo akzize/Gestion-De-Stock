@@ -37,6 +37,7 @@ if (isset($action) && $action == "Ajouter") {
         $stmt = $conn->prepare("INSERT INTO Products (`ProductID`,`Name`,`Description`,Price,CategoryID,`image`) VALUES(?,?,?,?,?,?)");
 
 
+        // le code pour placer l'image dans le dossier images
         $uploads_dir = '/images';
         $tmp_name = $_FILES["imageProduit"]["tmp_name"];
         $nameImage = $_FILES["imageProduit"]["name"];
@@ -49,7 +50,6 @@ if (isset($action) && $action == "Ajouter") {
         $stmt->bindParam(5, $idCategorie);
         $stmt->bindParam(6, $nameImage);
 
-        // le code pour placer l'image dans le dossier imags
 
 
         if ($stmt->execute()) {
