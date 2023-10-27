@@ -35,5 +35,3 @@ if (isset($_POST['okay'])) {
     }
 }
 ?>
-https://github.com/akzize/Gestion-De-Stock
-git submodule add <https://github.com/akzize/Gestion-De-Stock> Gestion-De-Stock

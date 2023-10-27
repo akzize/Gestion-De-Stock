@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter Categorie</title>
-    <link rel="stylesheet" href="SAC.css">
+    <link rel="stylesheet" href="assets/css/SAC.css">
    
 </head>
 <body>

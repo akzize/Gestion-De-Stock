@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"> <!-- Assurez-vous que le lien vers votre fichier CSS est correct -->
     <title>Modifier Produits</title>
-    <link rel="stylesheet" href="SAC.css">
+    <link rel="stylesheet" href="assets/css/SAC.css">
 </head>
 <body>
     <section class="home-section">
