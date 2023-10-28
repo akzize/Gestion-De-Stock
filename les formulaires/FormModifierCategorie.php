@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajouter Categorie</title>
-    <link rel="stylesheet" href="SAC.css">
+    <title>Modifier categorie</title>
+    <link rel="stylesheet" href="style.css">
    
 </head>
 <body>
@@ -28,7 +28,7 @@
         }
     ?>
     <div class="container">
-        <h4 style="text-align: center;">Ajouter categorie</h4>
+        <h4 style="text-align: center;">Modifier categorie</h4>
         <form method="post">
             <div>
                 <label class="label">Libelle</label>
@@ -38,8 +38,7 @@
                 <label class="label">Description</label>
                 <input type="text" class="form-controle" name="Description">
             </div>
-            <button name="ajouter" type="submit" value="Ajouter Categorie">Ajouter Categorie</button>
-            <!-- <input type="submit" class="green-button"  name="ajouter"> -->
+            <button name="ajouter" type="submit" value="Ajouter Categorie">Modifier Categorie</button>
         </form>
     </div>
 </body>

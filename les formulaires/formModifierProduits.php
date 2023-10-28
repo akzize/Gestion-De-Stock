@@ -1,5 +1,5 @@
 <?php
-// require "./config.php";
+ 
 ?>
 
 <!DOCTYPE html>
@@ -7,17 +7,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"> <!-- Assurez-vous que le lien vers votre fichier CSS est correct -->
+    <link rel="stylesheet" href="style.css">  
     <title>Modifier Produits</title>
-    <link rel="stylesheet" href="SAC.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section class="home-section">
         <section style="margin: auto;" class="container">
-            <header>Modifier Produits</header> <!-- Titre modifié -->
+            <header>Modifier Produits</header>  
 
-            <form method="POST" action="modifier_article.php" class="form"> <!-- Mettez l'URL correcte dans l'attribut action -->
-
+            <form method="POST" action="modifier_article.php" class="form">  
                 <?php if (!empty($message_success)): ?>
                     <div class="alert alert-success">
                         <?=$message_success?>
@@ -72,7 +71,7 @@
                     <input type="date" name="date-fab" placeholder="Date fabrication" />
                 </div>
 
-                <button name="modifier" type="submit">Modifier</button> <!-- Le nom du bouton est modifié -->
+                <button name="modifier" type="submit">Modifier</button>   
 
             </form>
         </section>
