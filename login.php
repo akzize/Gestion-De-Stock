@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('config/connexion.php');
+include('config/connect.php');
 if (isset($_SESSION['user'])) {
     header('Location: index.php');
 }
