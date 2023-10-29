@@ -19,7 +19,7 @@ if (!isset($_SESSION['user'])) {
 
 <body>
     <main>
-        <a class="btn btn-outline-danger" href="./config/logout.php" name="logout">Se deconnecter</a>
+        <a class="btn btn-outline-danger" href="./logForms/logout.php" name="logout">Se deconnecter</a>
         <p>test jira</p>
         zorp dfgfghjjgu swfewfdwe
     </main>

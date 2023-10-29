@@ -13,7 +13,7 @@ if (isset($_POST['login'])) {
     } else {
         $email = trim($_POST['email']);
         $password = trim($_POST['password']);
-        $query = $db->prepare("select * from users where Username=? AND Password=?");
+        $query = $conn->prepare("select * from users where Username=? AND Password=?");
         $query->execute([$email, $password]);
         $con = $query->fetch(PDO::FETCH_BOTH);
         if ($con > 0) {
