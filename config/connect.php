@@ -1,6 +1,6 @@
 <?php
 $username = "root";
-$password = "";
+$password = "rootpass";
 
 try {
   $conn = new PDO("mysql:host=localhost;dbname=gestion_stock", $username, $password);

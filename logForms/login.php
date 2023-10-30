@@ -1,8 +1,8 @@
 <?php
 session_start();
-include('config/connect.php');
+include('../config/connect.php');
 if (isset($_SESSION['user'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 if (isset($_POST['login'])) {
     if (empty($_POST['email']) || empty($_POST['password'])) {
@@ -13,14 +13,14 @@ if (isset($_POST['login'])) {
     } else {
         $email = trim($_POST['email']);
         $password = trim($_POST['password']);
-        $query = $conn->prepare("select * from users where Username=? AND Password=?");
+        $query = $conn->prepare("select * from Users where Username=? AND Password=?");
         $query->execute([$email, $password]);
         $con = $query->fetch(PDO::FETCH_BOTH);
         if ($con > 0) {
             $nom = $con['nom'];
             $prenom = $con['prenom'];
             $_SESSION["user"] = $nom . ' ' . $prenom;
-            header('Location: index.php');
+            header('Location: ../index.php');
         } else {
             echo "<div class='alert alert-danger alert-dismissible fade show auto-close-alert' role='alert'>
   <strong>les données d'authentification sont incorrects!!!</strong>
@@ -39,17 +39,17 @@ if (isset($_POST['login'])) {
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Authentifier</title>
     <!-- MDB icon -->
-    <link rel="icon" href="img/Logo.png" type="image/x-icon" />
+    <link rel="icon" href="../img/Logo.png" type="image/x-icon" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
     <!-- MDB -->
-    <link rel="stylesheet" href="assets/css/bootstrap-login-form.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 
-    <script src="./js/scripts.js"></script>
+    <script src="../assets/js/scripts.js"></script>
 
 </head>
 
@@ -59,7 +59,7 @@ if (isset($_POST['login'])) {
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="img/draw2.gif" class="img-fluid" alt="Sample image">
+                    <img src="../img/draw2.gif" class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <form method="post">
@@ -125,7 +125,7 @@ if (isset($_POST['login'])) {
         </div>
     </section>
     <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="../assets/js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
 </body>
