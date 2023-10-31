@@ -6,13 +6,16 @@ include_once __DIR__ . "/../config/connect.php";
 $action = $_POST["action"];
 
 // Récupère les info  de catégorie en utilisant la variable superglobale POST
-$nomCategorie = $_POST["nameCategorie"];
 
-$idCategorie = $_POST['idCategorie'];
 
 if (isset($action) && $action == "Ajouter") {
 
-    if (isset($nomCategorie)) {
+
+    if (isset($_POST["nameCategorie"])) {
+
+        $nomCategorie = $_POST["nameCategorie"];
+
+        $idCategorie = $_POST['idCategorie'];
 
         // Prépare la requête SQL avec un paramètre à lier
         $stmt = $conn->prepare("INSERT INTO Categories (CategoryID,CategoryName) VALUES(?,?)");
@@ -30,8 +33,10 @@ if (isset($action) && $action == "Ajouter") {
         }
     } else {
         // Récupère les info  de produit en utilisant la variable superglobale POST
-
-
+        $nomProduit = $_POST['Name'];
+        $descProduit = $_POST['Description'];
+        $prixProduit = $_POST['Price'];
+        $idCategorie = $_POST['CategoryID'];
 
         // Prépare la requête SQL avec un paramètre à lier
         $stmt = $conn->prepare("INSERT INTO Products (`ProductID`,`Name`,`Description`,Price,CategoryID,`image`) VALUES(?,?,?,?,?,?)");
@@ -59,4 +64,3 @@ if (isset($action) && $action == "Ajouter") {
         }
     }
 }
-
